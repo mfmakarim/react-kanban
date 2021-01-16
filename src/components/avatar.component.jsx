@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     align-items: center;
     overflow: hidden;
     border-radius: 100%;
-    margin-right: 15px;
+    margin-right: 5px;
     flex: 0 0 ${props => props.size };
 `;
 

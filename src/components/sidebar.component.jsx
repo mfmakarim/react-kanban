@@ -109,11 +109,11 @@ const Sidebar = () => {
 
     return(
     <Wrapper>
-        <Input type="text"/>
-        <Block height="50px"/>
+        <Input type="text" name="search"/>
+        <Block height="70px"/>
         <UserInfoWrapper>
             <Avatar imgSrc="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" size="50px"/>
-            <UserInfo name="Emilee Simchenko Emilee Simchenko" title="Product Owner" />
+            <UserInfo name="Emilee Simchenko" title="Product Owner" />
         </UserInfoWrapper>
         <Block height="25px"/>
         <UserStatus>

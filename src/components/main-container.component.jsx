@@ -1,15 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import Navbar from './navbar.component';
+import Kanban from './kanban.component';
+import Block from './block.component';
 
 const Wrapper = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: #f7f7f7;
+    background-color: #fff;
+    padding: 35px;
 `;
 
 const MainContainer = () => (
     <Wrapper>
-    Test
+        <Navbar/>
+        <Block height="50px"/>
+        <Kanban/>
     </Wrapper>
 );
 
