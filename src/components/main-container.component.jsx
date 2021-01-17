@@ -4,6 +4,7 @@ import Navbar from './navbar.component';
 import Kanban from './kanban.component';
 import Block from './block.component';
 
+
 const Wrapper = styled.div`
     width: 100%;
     height: 100vh;

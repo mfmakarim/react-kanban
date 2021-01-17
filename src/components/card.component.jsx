@@ -54,6 +54,7 @@ const Assign = styled.div`
     margin-right: 5px;
     text-align: center;
     color: #161616;
+    text-transform: uppercase;
 `;
 
 const Card = ({id, index, content}) => (
@@ -70,7 +71,7 @@ const Card = ({id, index, content}) => (
             <CardInfo>
                 <div>
                     {content.assigns.map(({id, name})=>(
-                        <Assign key={id}>{name}</Assign>
+                        <Assign key={id}>{name.substring(0, 1)}</Assign>
                     ))}
                     {content.tags.map(({id, bgColor, color, label})=>(
                         <Tag key={id} bgColor={bgColor} color={color}>{label}</Tag>

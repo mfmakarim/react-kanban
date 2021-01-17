@@ -5,6 +5,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Block from './block.component';
 import Card from './card.component';
 import { Droppable } from 'react-beautiful-dnd';
+import { useDispatch } from 'react-redux';
+import { toggleForm, getId } from './../redux/task/task.actions';
 
 const Wrapper = styled.div`
     border: 1px solid #f7f7f7;
@@ -42,11 +44,18 @@ const CardList = styled.div`
     background-color: ${props => (props.isDraggingOver ? '#edf9ff' : 'white')};
 `;
 
-const CardColumn = ({id, title, list}) => (
+const CardColumn = ({id, title, list}) => { 
+    const dispatch = useDispatch();
+
+    const handleClick = (id) => {
+        dispatch(getId(id));
+        dispatch(toggleForm());
+    }
+    return(
     <Wrapper>
         <Header>
             <Title>{title}</Title>
-            <Button><FontAwesomeIcon icon={faPlus} color="#fff"/> Add Task</Button>
+            <Button onClick={() => handleClick(id)}><FontAwesomeIcon icon={faPlus} color="#fff"/> Add Task</Button>
         </Header>
         <Block height="25px"/>
         <Droppable droppableId={id}>
@@ -65,6 +74,7 @@ const CardColumn = ({id, title, list}) => (
         }
         </Droppable>
     </Wrapper>
-);
+    );
+}
 
 export default CardColumn;
