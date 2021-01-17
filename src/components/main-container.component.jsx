@@ -7,7 +7,7 @@ import Block from './block.component';
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     padding: 35px;
 `;

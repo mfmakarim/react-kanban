@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import CardColumn from './card-column.component';
 import { DragDropContext } from 'react-beautiful-dnd';
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const Kanban = () => {
     const tasks = useSelector(state => state.task.tasks);
-    
+
     const onDragEnd = result => {
         const { destination, source } = result;
 

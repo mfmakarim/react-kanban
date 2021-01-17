@@ -86,11 +86,16 @@ const AddForm = () => {
         e.preventDefault();
 
         let time = date_diff_indays(holdTask.start_date, holdTask.end_date);
+        let newId = Math.random().toString().substr(2, 5);
 
-        tasks.filter(i => i.id === columnId);
+        console.log(columnId);
+        
+        let selectedTasks = tasks.map(task => (
+            task.id
+        )).indexOf(columnId);
 
-        tasks[0].list.push({
-            "id": "6",
+        tasks[selectedTasks].list.push({
+            "id": newId,
             "title": holdTask.title,
             "time": time+" days",
             "assigns": [
@@ -109,6 +114,8 @@ const AddForm = () => {
                 }
             ]
         })
+
+
         dispatch(addTasks(tasks));
         dispatch(toggleForm());
     }
