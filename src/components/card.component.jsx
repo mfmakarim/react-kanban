@@ -4,7 +4,8 @@ import Block from './block.component';
 import { Draggable } from 'react-beautiful-dnd';
 
 const Wrapper = styled.div`
-    background-color: #f6f5f2;
+    background-color: ${props => (props.isDragging ? '#fcfbf5': '#f6f5f2')};
+    border: ${props => (props.isDragging ? '1px solid #f6f5f2' : 'none')};
     width: 100%;
     margin-bottom: 15px;
     padding: 20px;
@@ -57,11 +58,12 @@ const Assign = styled.div`
 
 const Card = ({id, index, content}) => (
     <Draggable key={id} draggableId={id} index={index}>
-        {(provided) => (
+        {(provided, snapshot) => (
         <Wrapper
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
+            isDragging={snapshot.isDragging}
         >
             <CardTitle>{content.title}</CardTitle>
             <Block height="25px"/>

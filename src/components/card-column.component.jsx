@@ -38,9 +38,11 @@ const Button = styled.button`
     }
 `;
 
-const CardList = styled.div``;
+const CardList = styled.div`
+    background-color: ${props => (props.isDraggingOver ? '#edf9ff' : 'white')};
+`;
 
-const CardColumn = ({id, title, items}) => (
+const CardColumn = ({id, title, list}) => (
     <Wrapper>
         <Header>
             <Title>{title}</Title>
@@ -48,12 +50,13 @@ const CardColumn = ({id, title, items}) => (
         </Header>
         <Block height="25px"/>
         <Droppable droppableId={id}>
-        {(provided) => (
+        {(provided, snapshot) => (
             <CardList
                 ref={provided.innerRef}
                 {...provided.droppableProps}
+                isDraggingOver={snapshot.isDraggingOver}
             >
-            {items.map(({id, ...content}, index) => (
+            {list.map(({id, ...content}, index) => (
                 <Card key={id} id={id} index={index} content={{...content}} />
             ))}
             {provided.placeholder}

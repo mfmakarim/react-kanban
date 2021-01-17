@@ -12,148 +12,157 @@ const Wrapper = styled.div`
 
 
 const Kanban = () => {
-    const [itemsBacklog] = useState([
-        {
+    const [tasks, setTasks] = useState([
+        {   
             "id": "1",
-            "title": "Improve accuracy of voice-to-text model",
-            "time": "2 days",
-            "assigns": [
+            "title": "Backlog",
+            "list": [
                 {
-                    "id": 1,
-                    "name": "A",
-                    "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                }
-            ],
-            "tags": [
+                    "id": "1",
+                    "title": "Two-factor authentication to make private",
+                    "time": "2 days",
+                    "assigns": [
+                        {
+                            "id": 1,
+                            "name": "A",
+                            "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "id": 1,
+                            "bgColor": "#fff3d2",
+                            "color": "#f0c22d",
+                            "label": "Research"
+                        }
+                    ]
+                },
                 {
-                    "id": 1,
-                    "bgColor": "#fff3d2",
-                    "color": "#f0c22d",
-                    "label": "Research"
-                }
+                    "id": "2",
+                    "title": "Create API to load user info from database",
+                    "time": "2 days",
+                    "assigns": [
+                        {
+                            "id": 1,
+                            "name": "B",
+                            "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "id": 1,
+                            "bgColor": "#ffe5f0",
+                            "color": "#f153a7",
+                            "label": "Backend"
+                        }
+                    ]
+                },
             ]
         },
-        {
+        {   
             "id": "2",
-            "title": "Create API to load user info from database",
-            "time": "2 days",
-            "assigns": [
+            "title": "To Do",
+            "list": [
                 {
-                    "id": 1,
-                    "name": "B",
-                    "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                }
-            ],
-            "tags": [
+                    "id": "3",
+                    "title": "Fix bug on Mobile Front-End",
+                    "time": "2 days",
+                    "assigns": [
+                        {
+                            "id": 1,
+                            "name": "A",
+                            "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "id": 1,
+                            "bgColor": "#d2e3ff",
+                            "color": "#2d61f0",
+                            "label": "FrontEnd"
+                        }
+                    ]
+                },
                 {
-                    "id": 1,
-                    "bgColor": "#ffe5f0",
-                    "color": "#f153a7",
-                    "label": "Backend"
-                }
+                    "id": "4",
+                    "title": "Implement two-factor authentication",
+                    "time": "2 days",
+                    "assigns": [
+                        {
+                            "id": 1,
+                            "name": "B",
+                            "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "id": 1,
+                            "bgColor": "#ffe5f0",
+                            "color": "#f153a7",
+                            "label": "Backend"
+                        }
+                    ]
+                },
             ]
         },
-        
-    ]);
-
-    const [itemsTodo] = useState([
-        {
+        {   
             "id": "3",
-            "title": "Two-factor authentication to make private",
-            "time": "2 days",
-            "assigns": [
+            "title": "To Do",
+            "list": [
                 {
-                    "id": 1,
-                    "name": "A",
-                    "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                }
-            ],
-            "tags": [
-                {
-                    "id": 1,
-                    "bgColor": "#fff3d2",
-                    "color": "#f0c22d",
-                    "label": "Research"
-                }
+                    "id": "5",
+                    "title": "Words matching optimization",
+                    "time": "2 days",
+                    "assigns": [
+                        {
+                            "id": 1,
+                            "name": "A",
+                            "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "id": 1,
+                            "bgColor": "#fff3d2",
+                            "color": "#f0c22d",
+                            "label": "research"
+                        }
+                    ]
+                },
             ]
         },
-        {
-            "id": "4",
-            "title": "Create API to load user info from database",
-            "time": "2 days",
-            "assigns": [
-                {
-                    "id": 1,
-                    "name": "B",
-                    "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                }
-            ],
-            "tags": [
-                {
-                    "id": 1,
-                    "bgColor": "#ffe5f0",
-                    "color": "#f153a7",
-                    "label": "Backend"
-                }
-            ]
-        },
-        
-    ]);
-
-    const [itemsDone] = useState([
-        {
-            "id": "5",
-            "title": "Improve accuracy of voice-to-text model",
-            "time": "2 days",
-            "assigns": [
-                {
-                    "id": 1,
-                    "name": "A",
-                    "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                }
-            ],
-            "tags": [
-                {
-                    "id": 1,
-                    "bgColor": "#fff3d2",
-                    "color": "#f0c22d",
-                    "label": "Research"
-                }
-            ]
-        },
-        {
-            "id": "6",
-            "title": "Create API to load user info from database",
-            "time": "2 days",
-            "assigns": [
-                {
-                    "id": 1,
-                    "name": "B",
-                    "imgSrc": "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                }
-            ],
-            "tags": [
-                {
-                    "id": 1,
-                    "bgColor": "#ffe5f0",
-                    "color": "#f153a7",
-                    "label": "Backend"
-                }
-            ]
-        },
-        
     ]);
 
     const onDragEnd = result => {
+        const { destination, source } = result;
+
+        if(!destination){
+            return
+        }
+
+        if(destination.droppableId === source.droppableId &&
+            destination.index === source.index){
+                return;
+            }
         
+        console.log("source", source.droppableId);
+
+        const newTasks = tasks;
+        const before = newTasks.filter(i => i.id === source.droppableId);
+        const after = newTasks.filter(i => i.id === destination.droppableId);
+        const picked = before[0].list[source.index];
+
+        before[0].list.splice(source.index, 1);
+        after[0].list.splice(destination.index, 0, picked);
+
     };
 
     return(
         <DragDropContext onDragEnd={onDragEnd}>
             <Wrapper>
-                <CardColumn id="1" title="Backlog" items={itemsBacklog}/>
-                <CardColumn id="2" title="To Do" items={itemsTodo}/>
-                <CardColumn id="3" title="Done" items={itemsDone}/>
+            {tasks.map(({id, list, title}) => (
+                <CardColumn key={id} id={id} title={title} list={list}/>
+            ))}
             </Wrapper>
         </DragDropContext>
     );
